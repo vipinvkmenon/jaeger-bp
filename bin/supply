@@ -13,7 +13,7 @@ git clone https://github.com/jaegertracing/jaeger.git
 
 echo "-----> Running go build supply"
 pushd $BUILDPACK_DIR
-GOROOT=$GoInstallDir/go $GoInstallDir/go/bin/go build -mod=vendor -o $output_dir/jaeger-agent jaeger/cmd/agent
+GOROOT=$GoInstallDir/go CGO_ENABLED=0 installsuffix=cgo $GoInstallDir/go/bin/go build -o $output_dir/jaeger-agent jaeger/cmd/agent/main.go
 popd
 
 $output_dir/jaeger-agent 
