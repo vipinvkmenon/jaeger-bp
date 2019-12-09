@@ -16,7 +16,8 @@ echo "-----> Running go build supply"
 #pushd $BUILDPACK_DIR
 #GOROOT=$GoInstallDir/go $GoInstallDir/go/bin/go build -mod=vendor -o $output_dir/jaeger-agent jaeger/cmd/agent
 #popd
-cp jaeger-agent $output_dir/jaeger-agent
+ls
+cp $BUILDPACK_DIR/jaeger-agent $output_dir/jaeger-agent
 echo starting Jaeger-Agent
 
 
